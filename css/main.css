@@ -215,10 +215,11 @@ nav ul li:last-child {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 #hero-table {
-  padding-top: 7em;
+  padding-top: 5em;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
@@ -232,7 +233,7 @@ nav ul li:last-child {
 #about {
   text-align: center;
   font-family: Poppins;
-  font-weight: 800;
+  font-weight: 400;
   font-size: 20px;
   color: #fff;
   margin: 0;
@@ -260,4 +261,26 @@ td {
 
 .social:hover {
   opacity: 1;
+}
+
+.about a {
+  text-decoration: none;
+  color: #ac4c1b;
+  cursor: pointer;
+}
+
+.about a:hover {
+  text-decoration: underline;
+}
+
+.about {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+@media (max-width: 1000px) {
+  .about {
+    width: 80%;
+  }
 }
