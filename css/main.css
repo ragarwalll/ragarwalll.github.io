@@ -351,6 +351,12 @@ td {
           transform: scale(0.8);
 }
 
+@media (max-width: 366px) {
+  .iphone {
+    display: none;
+  }
+}
+
 .iphone-top {
   padding: 5px 110px 40px;
   position: relative;
