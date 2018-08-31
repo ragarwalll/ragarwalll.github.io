@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 @import url("https://fonts.googleapis.com/css?family=Josefin+Slab");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
 @font-face {
   font-family: Hele;
   src: url(../font/HelveticaNeue.ttf);
@@ -577,6 +578,7 @@ td {
 .main-container {
   max-width: 1600px;
   margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
 }
 
 @media (min-width: 600px) {
@@ -630,18 +632,6 @@ td {
   }
 }
 
-@media (min-width: 600px) {
-  .figure7 {
-    grid-column: span 3;
-  }
-}
-
-@media (min-width: 600px) {
-  .figure8 {
-    grid-column: span 3;
-  }
-}
-
 .figure-img {
   display: block;
   width: 100%;
@@ -661,9 +651,64 @@ p {
 
 .info-link {
   text-decoration: none;
-  color: #d80c0c;
+  color: #ac4c1b;
 }
 
 figure {
   margin: 0;
+}
+
+.resume {
+  background-image: url(../img/resume1.png);
+  height: 75vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.resumeicon {
+  color: #000;
+  transition: all ease-in-out 250ms;
+  opacity: 0.7;
+}
+
+.resumeicon:hover {
+  color: #ac4c1b;
+  -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+i.resumeicon {
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid #000;
+  padding: 0.3em 0.4em;
+  box-shadow: 0px 0px 2px #888;
+}
+
+i.resumeicon:hover {
+  border: 1px solid #ac4c1b;
+}
+
+.resumee {
+  padding-top: 125px;
+  font-size: 4.5em;
+  color: #ac4c1b;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 580px) {
+  .resumee {
+    padding-top: 100px;
+    font-size: 3.5em;
+  }
+}
+
+@media (max-width: 300px) {
+  .resumee {
+    padding-top: 30px;
+    font-size: 3.5em;
+  }
 }
