@@ -6,7 +6,6 @@
   font-family: Hele;
   src: url(../font/HelveticaNeue.ttf);
 }
-
 * {
   box-sizing: border-box;
 }
@@ -19,7 +18,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Josefin Slab', serif;
+  font-family: "Josefin Slab", serif;
 }
 
 .spinner {
@@ -30,32 +29,17 @@ body {
   left: 48%;
   background-color: #333;
   border-radius: 100%;
-  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
-  animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1s infinite ease-in-out;
 }
-
-@-webkit-keyframes sk-scaleout {
-  0% {
-    -webkit-transform: scale(0);
-  }
-  100% {
-    -webkit-transform: scale(1);
-    opacity: 0;
-  }
-}
-
 @keyframes sk-scaleout {
   0% {
-    -webkit-transform: scale(0);
     transform: scale(0);
   }
   100% {
-    -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 0;
   }
 }
-
 .spinner-wrapper {
   position: fixed;
   top: 0;
@@ -86,9 +70,7 @@ nav ul li:last-child {
   float: right;
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   width: 100%;
 }
 
@@ -131,9 +113,7 @@ nav ul li:last-child {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 1.2px;
-  -webkit-transform: translateX(-20px);
-      -ms-transform: translateX(-20px);
-          transform: translateX(-20px);
+  transform: translateX(-20px);
   transition: all 0.2s ease;
   display: inline-block;
   outline: none;
@@ -176,22 +156,16 @@ nav ul li:last-child {
 }
 
 #nav:checked + .nav-btn {
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 #nav:checked + .nav-btn i {
   background: #000;
-  transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
-  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 
 #nav:checked + .nav-btn i:nth-child(1) {
-  -webkit-transform: translateY(6px) rotate(180deg);
-      -ms-transform: translateY(6px) rotate(180deg);
-          transform: translateY(6px) rotate(180deg);
+  transform: translateY(6px) rotate(180deg);
 }
 
 #nav:checked + .nav-btn i:nth-child(2) {
@@ -199,9 +173,7 @@ nav ul li:last-child {
 }
 
 #nav:checked + .nav-btn i:nth-child(3) {
-  -webkit-transform: translateY(-6px) rotate(90deg);
-      -ms-transform: translateY(-6px) rotate(90deg);
-          transform: translateY(-6px) rotate(90deg);
+  transform: translateY(-6px) rotate(90deg);
 }
 
 #nav:checked ~ .nav-wrapper {
@@ -211,9 +183,7 @@ nav ul li:last-child {
 
 #nav:checked ~ .nav-wrapper ul li a {
   opacity: 1;
-  -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-          transform: translateX(0);
+  transform: translateX(0);
 }
 
 .hidden {
@@ -230,24 +200,24 @@ nav ul li:last-child {
 }
 
 #hero-table {
-  padding-top: 5em;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding-top: 20vh;
+  align-items: center;
 }
 
 #myimage {
   border-radius: 50%;
   border: 4px solid #fff;
+  margin: 20px;
 }
 
 #about {
   text-align: center;
-  font-family: 'Josefin Slab', serif;
+  font-family: "Josefin Slab", serif;
   font-weight: 500;
   font-size: 23px;
   color: #fff;
-  margin: 0;
+  margin: 0px;
+  padding: 10px;
 }
 
 td {
@@ -256,7 +226,7 @@ td {
 
 .name {
   text-align: center;
-  font-family: 'Josefin Slab', serif;
+  font-family: "Josefin Slab", serif;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
   font-weight: 800;
   font-size: 40px;
@@ -269,7 +239,6 @@ td {
   color: #fff;
   opacity: 0.5;
 }
-
 .social:hover {
   opacity: 1;
 }
@@ -279,7 +248,6 @@ td {
   color: #ac4c1b;
   cursor: pointer;
 }
-
 .about a:hover {
   text-decoration: underline;
 }
@@ -287,32 +255,28 @@ td {
 .about {
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   width: 45%;
   font-size: 20px;
 }
-
 @media (max-width: 1100px) {
   .about {
     width: 50%;
     font-size: 16px;
   }
 }
-
 @media (max-width: 700px) {
   .about {
     width: 45%;
     font-size: 14px;
   }
 }
-
 @media (max-width: 600px) {
   .about {
     width: 80%;
     font-size: 15px;
   }
 }
-
 @media (max-width: 400px) {
   .about {
     width: 80%;
@@ -327,14 +291,12 @@ td {
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
   margin: 0;
 }
-
 @media (max-width: 580px) {
   .project {
     padding-top: 100px;
     font-size: 3.5em;
   }
 }
-
 @media (max-width: 240px) {
   .project {
     padding-top: 50px;
@@ -370,60 +332,40 @@ td {
   margin-left: -80px;
   margin-right: -80px;
   margin-bottom: -50px;
-  -webkit-transform: scale(0.8);
-      -ms-transform: scale(0.8);
-          transform: scale(0.8);
+  transform: scale(0.8);
 }
-
 @media (max-width: 500px) {
   .iphone {
-    -webkit-transform: scale(0.7);
-        -ms-transform: scale(0.7);
-            transform: scale(0.7);
+    transform: scale(0.7);
     margin-top: -100px;
     margin-bottom: -100px;
   }
 }
-
 @media (max-width: 400px) {
   .iphone {
-    -webkit-transform: scale(0.65);
-        -ms-transform: scale(0.65);
-            transform: scale(0.65);
+    transform: scale(0.65);
   }
 }
-
 @media (max-width: 360px) {
   .iphone {
-    -webkit-transform: scale(0.6);
-        -ms-transform: scale(0.6);
-            transform: scale(0.6);
+    transform: scale(0.6);
   }
 }
-
 @media (max-width: 350px) {
   .iphone {
-    -webkit-transform: scale(0.55);
-        -ms-transform: scale(0.55);
-            transform: scale(0.55);
+    transform: scale(0.55);
     margin-bottom: -200px;
   }
 }
-
 @media (max-width: 340px) {
   .iphone {
-    -webkit-transform: scale(0.5);
-        -ms-transform: scale(0.5);
-            transform: scale(0.5);
+    transform: scale(0.5);
     margin-bottom: -250px;
   }
 }
-
 @media (max-width: 300px) {
   .iphone {
-    -webkit-transform: scale(0.45);
-        -ms-transform: scale(0.45);
-            transform: scale(0.45);
+    transform: scale(0.45);
     margin-bottom: -250px;
   }
 }
@@ -432,7 +374,6 @@ td {
   padding: 5px 110px 40px;
   position: relative;
 }
-
 .iphone-top .speaker {
   display: block;
   width: 70px;
@@ -441,7 +382,6 @@ td {
   border-radius: 6px;
   background: #292728;
 }
-
 .iphone-top .camera {
   display: block;
   margin: 0 auto;
@@ -451,7 +391,6 @@ td {
   margin-bottom: 13px;
   background: #333;
 }
-
 .iphone-top .sensor {
   display: block;
   width: 15px;
@@ -490,7 +429,6 @@ td {
   border-radius: 3px;
   overflow: hidden;
 }
-
 .iphone-screen img {
   width: 100%;
 }
@@ -501,28 +439,23 @@ td {
   position: absolute;
   border-radius: 2px 0px 0px 2px;
 }
-
 .buttons .on-off {
   height: 40px;
   width: 3px;
   top: 100px;
   left: -8px;
 }
-
 .buttons .up, .buttons .down, .buttons .sleep {
   height: 60px;
   width: 5px;
   left: -10px;
 }
-
 .buttons .up {
   top: 170px;
 }
-
 .buttons .down {
   top: 250px;
 }
-
 .buttons .sleep {
   left: auto;
   right: -10px;
@@ -533,7 +466,6 @@ td {
 .iphone-bottom {
   padding: 10px 0 0;
 }
-
 .iphone-bottom span {
   display: block;
   margin: 0 auto;
@@ -544,7 +476,6 @@ td {
   background: linear-gradient(135deg, #303233 0%, #b5b7b9 50%, #f0f2f2 69%, #303233 100%);
   position: relative;
 }
-
 .iphone-bottom span:after {
   content: "";
   display: block;
@@ -572,7 +503,6 @@ td {
   color: #ac4c1b;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
-
 @media (max-width: 580px) {
   .drawing {
     padding-top: 150px;
@@ -583,7 +513,7 @@ td {
 .main-container {
   max-width: 1600px;
   margin: 0 auto;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 @media (min-width: 600px) {
@@ -598,7 +528,6 @@ td {
   background-color: #292727;
   color: #fff;
 }
-
 @media (min-width: 600px) {
   .info1 {
     grid-column: span 2;
@@ -611,7 +540,6 @@ td {
   background-color: #292727;
   color: #fff;
 }
-
 @media (min-width: 600px) {
   .info2 {
     grid-column: span 2;
@@ -665,7 +593,7 @@ figure {
 
 .resume {
   background-image: url(../img/resume1.png);
-  height: 75vh;
+  height: 60vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -677,12 +605,9 @@ figure {
   transition: all ease-in-out 250ms;
   opacity: 0.7;
 }
-
 .resumeicon:hover {
   color: #ac4c1b;
-  -webkit-transform: scale(1.5);
-      -ms-transform: scale(1.5);
-          transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 i.resumeicon {
@@ -692,7 +617,6 @@ i.resumeicon {
   padding: 0.3em 0.4em;
   box-shadow: 0px 0px 2px #888;
 }
-
 i.resumeicon:hover {
   border: 1px solid #ac4c1b;
 }
@@ -704,14 +628,12 @@ i.resumeicon:hover {
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
   margin: 0;
 }
-
 @media (max-width: 580px) {
   .resumee {
     padding-top: 100px;
     font-size: 3.5em;
   }
 }
-
 @media (max-width: 300px) {
   .resumee {
     padding-top: 30px;
