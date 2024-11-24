@@ -1,14 +1,11 @@
 <svg width="200" height="326" viewBox="0 0 200 326" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
         :root {
-        --background-color: #e8e8e3;
-        --text-color: var(--text-color);
-        --darker-text-color: #6F6F6F;
+        --text-color: #101010;
         }
 
         @media (prefers-color-scheme: dark) {
         :root {
-        --background-color: var(--text-color);
         --text-color: #b7ab98;
         }
         }
