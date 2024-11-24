@@ -1,0 +1,21 @@
+<svg width="199" height="325" viewBox="0 0 199 325" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        :root {
+        --background-color: #e8e8e3;
+        --text-color: var(--text-color);
+        --darker-text-color: #6F6F6F;
+        }
+
+        @media (prefers-color-scheme: dark) {
+        :root {
+        --background-color: var(--text-color);
+        --text-color: #b7ab98;
+        }
+        }
+    </style>
+    <path d="M72 0H198.12V126.12H72V0Z" fill="var(--text-color)" fill-opacity="0.5" />
+    <path
+        d="M0 126L72 126.12L90 144L180.12 234.12L198.12 252V324.12H126L108.12 306.12L18 216L0 198.12V126Z"
+        fill="var(--text-color)" fill-opacity="0.5" />
+</svg>
+    

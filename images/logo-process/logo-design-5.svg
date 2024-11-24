@@ -1,0 +1,232 @@
+<svg width="200" height="326" viewBox="0 0 200 326" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        :root {
+        --background-color: #e8e8e3;
+        --text-color: var(--text-color);
+        --darker-text-color: #6F6F6F;
+        }
+
+        @media (prefers-color-scheme: dark) {
+        :root {
+        --background-color: var(--text-color);
+        --text-color: #b7ab98;
+        }
+        }
+    </style>
+    <rect x="1.1" y="217.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="1.1" y="253.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="1.1" y="289.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="1.1" y="235.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="1.1" y="199.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="1.1" y="271.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="1.1" y="307.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="109.1" y="145.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="109.1" y="217.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="109.1" y="181.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="109.1" y="253.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="109.1" y="289.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="109.1" y="163.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="109.1" y="235.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="109.1" y="199.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="109.1" y="127.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="109.1" y="271.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="109.1" y="307.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="55.1" y="217.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="55.1" y="253.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="55.1" y="289.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="55.1" y="235.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="55.1" y="199.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="55.1" y="271.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="55.1" y="307.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="163.1" y="145.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="163.1" y="217.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="163.1" y="181.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="163.1" y="253.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="163.1" y="289.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="163.1" y="163.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="163.1" y="235.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="163.1" y="199.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="163.1" y="127.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="163.1" y="271.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="163.1" y="307.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="37.1" y="217.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="37.1" y="253.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="37.1" y="289.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="37.1" y="235.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="37.1" y="199.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="37.1" y="271.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="37.1" y="307.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="145.1" y="145.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="145.1" y="217.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="145.1" y="181.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="145.1" y="253.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="145.1" y="289.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="145.1" y="163.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="145.1" y="235.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="145.1" y="199.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="145.1" y="127.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="145.1" y="271.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="145.1" y="307.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="91.1" y="145.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="91.1" y="217.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="91.1" y="181.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="91.1" y="253.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="91.1" y="289.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="91.1" y="163.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="91.1" y="235.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="91.1" y="199.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="91.1" y="127.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="91.1" y="271.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="91.1" y="307.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="19.1" y="217.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="19.1" y="253.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="19.1" y="289.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="19.1" y="235.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="19.1" y="199.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="1" y="127" width="72" height="72" fill="var(--text-color)" fill-opacity="0.5" />
+    <rect x="19.1" y="271.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="19.1" y="307.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="127.1" y="145.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="127.1" y="217.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="127.1" y="181.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="127.1" y="253.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="127.1" y="289.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="127.1" y="163.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="127.1" y="235.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="127.1" y="199.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="127.1" y="127.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="127.1" y="271.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="127.1" y="307.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="73.1" y="145.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="73.1" y="217.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="73.1" y="181.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="73.1" y="253.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="73.1" y="289.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="73.1" y="163.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="73.1" y="235.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="73.1" y="199.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="73.1" y="127.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="73.1" y="271.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="73.1" y="307.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="181.1" y="145.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="181.1" y="217.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="181.1" y="181.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="181.1" y="253.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="181.1" y="289.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="181.1" y="163.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="181.1" y="235.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="73" y="1" width="126" height="126" fill="var(--text-color)" fill-opacity="0.5" />
+    <rect x="181.1" y="199.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="181.1" y="127.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="181.1" y="271.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <rect x="181.1" y="307.1" width="17.92" height="17.92" stroke="var(--text-color)"
+        stroke-width="0.2" />
+    <path
+        d="M1 325C1 325 199.5 253 199 127C198.5 1 91 1 73 1C55 1 0.5 19 1 73C1.5 127 55 127 55 127C55 127 73 127 73 109C73 91 55 91 55 91"
+        stroke="var(--text-color)" />
+</svg>
+    
