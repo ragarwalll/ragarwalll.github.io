@@ -1,0 +1,17 @@
+{
+  "name": "ragarwalll.github.io",
+  "version": "1.0.0",
+  "description": "This is the source code for my personal website, [therahulagarwal.com](https://therahulagarwal.com). It is built using basic HTML, CSS, and JavaScript. I didnt want boost it with chessy animations or heavy libraries. I wanted to keep it simple and clean.",
+  "main": "script.js",
+  "scripts": {
+    "config": "minimalify init -type=json",
+    "build": "minimalify build",
+    "dev": "minimalify dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "minimalify": "^0.1.2"
+  }
+}

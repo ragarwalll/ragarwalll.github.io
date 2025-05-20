@@ -1,120 +1,174 @@
 /**
- * Handles the favicon based on the visibility of the page
+ * Handles the favicon based on the visibility of the page.
  */
 const faviconHandler = () => {
-    const favicon = document.querySelector('link[rel="icon"][sizes="any"]');
-    const faviconPath = document.hidden ? './favicon/favicon-inactive.svg' : './favicon/favicon.svg';
-    favicon.setAttribute('href', faviconPath);
-}
+  const favicon = document.querySelector(
+    'link[rel="icon"][type="image/x-icon"]'
+  );
+  if (!favicon) {
+    console.warn("Favicon link element not found.");
+    return;
+  }
+  // get current favicon path
+  const currentFavicon = favicon.getAttribute("href");
+
+  // Set the favicon path based on visibility
+  // if the page is hidden, set a different favicon i.e. add a "hidden" suffix
+  const faviconPath = document.hidden
+    ? currentFavicon.replace(/(\.[a-z]{2,4})$/, "-inactive$1")
+    : currentFavicon.replace(/-inactive(\.[a-z]{2,4})$/, "$1");
+
+  favicon.setAttribute("href", faviconPath);
+};
 
 /**
- * Optimized smooth scroll handler
+ * Optimizes smooth scroll handling.
+ * @param {Element} element - The element to scroll to.
  */
 const smoothScrollTo = (element) => {
-    if (!element) return;
+  if (!element) {
+    console.warn("Attempted to scroll to a null element.");
+    return;
+  }
 
-    // Use native smooth scroll with fallback
-    if ('scrollBehavior' in document.documentElement.style) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-        // Fallback for browsers that don't support smooth scroll
-        window.scrollTo({
-            top: element.offsetTop,
-            behavior: 'smooth'
-        });
-    }
+  // Use native smooth scroll with fallback
+  if ("scrollBehavior" in document.documentElement.style) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  } else {
+    // Fallback for browsers that don't support smooth scroll
+    window.scrollTo({
+      top: element.offsetTop,
+      behavior: "smooth",
+    });
+  }
 };
 
 /**
- * Makes the page scroll to the target element
+ * Handles changes to the URL hash to scroll to the target element.
  * @returns {void}
  */
-const hasChangerHandler = () => {
-    const hash = window.location.hash;
-    if (!hash) return;
+const hashChangerHandler = () => {
+  const hash = window.location.hash;
+  if (!hash) {
+    return;
+  }
 
-    const element = document.querySelector(`a[href="${hash}"]`);
-    if (!element) return;
+  // Escape potential special characters in the hash for robust selection
+  const escapedHash = CSS.escape(hash);
+  const element = document.querySelector(`[href="${escapedHash}"]`);
 
-    smoothScrollTo(element);
-}
+  if (!element) {
+    console.warn(`Element with href="${escapedHash}" not found.`);
+    return;
+  }
 
-/**
- * Updates the active section based on the current scroll position
- */
-const updateActiveSection = () => {
-    // Cache selectors
-    const activators = document.querySelectorAll('.heading-link-activator');
-    const headingLinks = document.querySelectorAll('.heading-link');
-
-    // Use requestAnimationFrame for better performance
-    requestAnimationFrame(() => {
-        let currentActivator = null;
-        let maxVisibility = 0;
-
-        // if use is at the top, remove active class from all links
-        // and remove existing hash
-        if (window.scrollY <= 50 && window.location.hash) {
-            headingLinks.forEach(link => link.classList.remove('active'));
-            history.replaceState(null, null, window.location.pathname);
-            return;
-        }
-
-        // Consider using a more efficient loop
-        for (let i = 0; i < activators.length; i++) {
-            const activator = activators[i];
-            const rect = activator.getBoundingClientRect();
-            const visibility = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
-
-            if (visibility > maxVisibility) {
-                maxVisibility = visibility;
-                currentActivator = activator.querySelector("a[class='heading-link']");
-                break;
-            }
-        }
-
-        if (currentActivator) {
-            const currentHref = currentActivator.getAttribute('href');
-
-            // Consider using a Set for active links
-            const currentHash = window.location.hash;
-            if (currentHash !== currentHref) {
-                history.replaceState(null, null, currentHref);
-
-                // Update classes
-                headingLinks.forEach(link => {
-                    link.classList.toggle('active', link.getAttribute('href') === currentHref);
-                });
-            }
-        }
-    });
+  smoothScrollTo(element);
 };
 
 /**
- * Main function to handle all event listeners
+ * Updates the active section based on the current scroll position using debouncing.
  */
-const main = () => {
-    document.addEventListener('visibilitychange', faviconHandler);
-    window.addEventListener('hashchange', hasChangerHandler);
+const updateActiveSection = (() => {
+  // Cache selectors outside the function to avoid repeated lookups
+  const activators = document.querySelectorAll(".c-heading-anchor");
+  const headingLinks = document.querySelectorAll(".c-heading-anchor__link");
 
-    // Handle initial hash on page load
-    if (window.location.hash) {
-        requestAnimationFrame(() => {
-            const targetElement = document.querySelector(`a[href="${window.location.hash}"]`);
-            if (targetElement) {
-                // Use RAF instead of setTimeout
-                requestAnimationFrame(() => smoothScrollTo(targetElement));
-            }
-        });
-    }
+  let scrollTimeout;
+  const debounceDelay = 100;
 
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(updateActiveSection, 100);
-    }, { passive: true });
-}
+  const processScroll = () => {
+    requestAnimationFrame(() => {
+      if (window.scrollY <= 50 && window.location.hash) {
+        headingLinks.forEach((link) =>
+          link.classList.remove("c-heading-anchor__link--active")
+        );
+        history.replaceState(null, null, window.location.pathname);
+        return;
+      }
+
+      let currentActivator = null;
+      let maxVisibility = 0;
+
+      for (let i = 0; i < activators.length; i++) {
+        const activator = activators[i];
+        const rect = activator.getBoundingClientRect();
+
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          const visibility =
+            Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+
+          if (visibility > maxVisibility) {
+            maxVisibility = visibility;
+            currentActivator = activator.querySelector(
+              "a[class='c-heading-anchor__link']"
+            );
+          }
+        }
+      }
+
+      if (currentActivator) {
+        const currentHref = currentActivator.getAttribute("href");
+
+        const currentHash = window.location.hash;
+        if (currentHash !== currentHref) {
+          history.replaceState(null, null, currentHref);
+
+          headingLinks.forEach((link) => {
+            link.classList.toggle(
+              "c-heading-anchor__link--active",
+              link.getAttribute("href") === currentHref
+            );
+          });
+        }
+      } else {
+        headingLinks.forEach((link) =>
+          link.classList.remove("c-heading-anchor__link--active")
+        );
+        if (window.location.hash) {
+          history.replaceState(null, null, window.location.pathname);
+        }
+      }
+    });
+  };
+
+  return () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(processScroll, debounceDelay);
+  };
+})();
+
+/**
+ * Main function to handle all event listeners.
+ */
+const scrollManager = () => {
+  window.addEventListener("hashchange", hashChangerHandler);
+
+  // Handle initial hash on page load
+  if (window.location.hash) {
+    requestAnimationFrame(() => {
+      const escapedHash = CSS.escape(window.location.hash);
+      const targetElement = document.querySelector(`[href="${escapedHash}"]`);
+      if (targetElement) {
+        requestAnimationFrame(() => smoothScrollTo(targetElement));
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveSection, {
+    passive: true,
+  });
+};
 
 // Initialize once DOM is loaded
-if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', main)
-else main();
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", ()=>{
+    faviconHandler();
+    scrollManager();
+  });
+} else {
+  scrollManager();
+  document.addEventListener("visibilitychange", faviconHandler);
+}

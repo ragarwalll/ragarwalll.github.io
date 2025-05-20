@@ -1,0 +1,26 @@
+name: push-to-gh-pages
+
+permissions:
+  contents: write
+  pages: write
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GH-Pages using Minimalify
+        uses: ragarwalll/deploy-with-minimalify@v1
+        with:
+          package-manager: npm
+          node-version: '20'
+          cache-deps: true
+          precheck: true
+          workdir: './'
+          branch: gh-pages
+          config-file: './minimalify.config.json'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
