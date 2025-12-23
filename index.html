@@ -76,11 +76,10 @@
         </li>
         <li>Got into the world of programming and never looked back.</li>
         <li>
-          Started my career at SAP in 2019 and worked there until April 2025, where I learned a lot of things.
+          Started my career at SAP in 2019 and worked there until April 2025,
+          where I learned a lot of things.
         </li>
-        <li>
-          Currently working as a Software Engineer at Adobe.
-        </li>
+        <li>Currently working as a Software Engineer at Adobe.</li>
         <li>Met some amazing people & some not so amazing people.</li>
         <li>
           Found a way to make a living out of something I'm passionate about.
@@ -246,6 +245,13 @@
       </p>
 
       <!-- logo section -->
+      <input type="checkbox" id="logo-checkbox" name="logo-checkbox" />
+      <label
+        for="logo-checkbox"
+        class="c-test"
+        style="text-decoration: underline; text-decoration-style: dotted"
+        >Hide</label
+      >
       <div class="c-auto-grid">
         <object
           type="image/svg+xml"
@@ -540,8 +546,8 @@
         they're going out of style. Each one's got its cute little README or a
         half-baked mini-site for docs, but here's the kicker: I kept
         copy-pasting the same tired CSS and JavaScript like some kind of digital
-        packrat. Consistency? Sure, but at what costâ€”my sanity? I could've
-        gone full nerd and fired up React or Vue, but let's be real, that's like
+        packrat. Consistency? Sure, but at what cost-my sanity? I could've gone
+        full nerd and fired up React or Vue, but let's be real, that's like
         using a sledgehammer to crack a walnut. So, I said screw it and built
         Minimalify, a no-nonsense tool that sticks to the browser's raw
         JavaScript power and doesn't make me jump through framework hoops just
@@ -551,13 +557,13 @@
       <p>
         Enter <i>Minimalify</i>, my snarky little CLI sidekick with exactly two
         tricks up its sleeve: <i>dev</i> and <i>build</i>. Run
-        <i>npm run dev</i>, and boomâ€”you've got a local server with instant
+        <i>npm run dev</i>, and boom you've got a local server with instant
         rebuilds and hot-reload that's creepily obsessed with your .html, .css,
         and .js files. It slaps on your shared styles, inlines templates, and
         updates everything without that annoying full-page refresh. Ready to
         flex your project to the world? <i>npm run build</i> spits out a lean,
         minified output folder you can yeet straight to GitHub Pages. No bloated
-        dependencies, no config nightmaresâ€”just a stupid-fast, stripped-down
+        dependencies, no config nightmares just a stupid-fast, stripped-down
         tool that makes documenting all my apps look slick and consistent
         without breaking a sweat.
       </p>
@@ -570,7 +576,10 @@
       title="More than just a developer, I'm a human too."
       link="hobbies"
     >
-      <h3 class="u-mt-none u-text-light">Let's talk about my hobbies.</h3>
+      <include-sub-header
+        title="Let's talk about my hobbies."
+        link="talking-about-hobbies"
+      ></include-sub-header>
 
       <p>
         I discovered my love for exploring new things during COVID. I started
@@ -599,6 +608,44 @@
         and his interviews. So I started reading his biography. I'll update once
         I finish it.
       </p>
+
+      <include-sub-header
+        title="I love dancing & making people dance."
+        link="dancing"
+      ></include-sub-header>
+
+      <p>
+        Dance, for me, isn't about mastering one specific form, it's about
+        feeling the music and letting it move people.
+      </p>
+
+      <p>
+        While I'm drawn to hip-hop, I don't box myself in. If the beat hits
+        right, I'm in. I dance instinctively, adapting to the rhythm, the mood,
+        and the energy in the room.
+      </p>
+
+      <p>
+        What I enjoy even more than dancing is making others dance. Whether it's
+        a wedding celebration, a pub night, clubbing with friends, or an
+        impromptu moment on the floor, I love breaking the ice, lifting the
+        vibe, and getting people to let loose.
+      </p>
+
+      <p>
+        For me, dance is less about perfection and more about connection, joy,
+        and shared energy.
+      </p>
+
+      <div class="c-auto-grid c-grid-fit">
+        <section class="hero hero-dance1">
+          <div class="hero-content"></div>
+        </section>
+
+        <section class="hero hero-dance2">
+          <div class="hero-content"></div>
+        </section>
+      </div>
     </include-section>
     <!-- end of hobbies section -->
 
