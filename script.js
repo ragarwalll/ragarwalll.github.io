@@ -162,13 +162,211 @@ const scrollManager = () => {
   });
 };
 
+/**
+ * TLDR Generator functionality
+ */
+const tldrGenerator = (() => {
+  let modal, openBtn, closeBtn, categoryButtons;
+
+  // Prompt templates for each category - optimized for real-world use cases
+  const prompts = {
+    professional: `Visit ${window.location.origin} and analyze the website content. Also check https://github.com/ragarwalll if mentioned.
+
+Create a professional TLDR summary that would be useful for:
+- Recruiters scanning LinkedIn profiles
+- Hiring managers reviewing candidates
+- Potential collaborators or clients
+- Networking events and introductions
+
+REQUIREMENTS:
+1. Extract key information:
+   - Current role and company
+   - Years of experience and career progression
+   - Core technical skills (be specific: languages, frameworks, tools)
+   - Notable projects with impact/metrics (downloads, users, etc.)
+   - Problem-solving approach and work philosophy
+   - Educational background
+
+2. Format as a concise professional bio (2-3 short paragraphs):
+   - First paragraph: Current role, experience level, and primary expertise
+   - Second paragraph: Key achievements, projects, and technical strengths
+   - Third paragraph (optional): Approach to work, values, or unique differentiators
+
+3. Style guidelines:
+   - Professional but approachable tone
+   - Use specific technologies and metrics when available
+   - Focus on outcomes and impact, not just responsibilities
+   - Avoid buzzwords and generic statements
+   - Be authentic to the website's tone
+   - No emojis
+
+4. Make it scannable and LinkedIn-ready - something that can be copied directly into a professional profile or email introduction.`,
+
+    friendly: `Visit ${window.location.origin} and read through the website to understand Rahul's personality and interests.
+
+Create a friendly, casual TLDR that would be useful for:
+- Introducing him to new friends or social groups
+- Social media bios (Twitter, Instagram, etc.)
+- Casual networking or meetups
+- When someone asks "tell me about yourself" in a non-professional setting
+
+REQUIREMENTS:
+1. Extract key information:
+   - Personal background and story
+   - Hobbies, interests, and passions
+   - Personality traits and quirks
+   - Creative pursuits and adventures
+   - What makes him interesting as a person
+   - Projects mentioned casually (not too technical)
+
+2. Format as a friendly introduction (2-3 paragraphs):
+   - First paragraph: Who he is and what he's passionate about
+   - Second paragraph: Interests, hobbies, and personality highlights
+   - Third paragraph: Fun facts or what makes him unique
+
+3. Style guidelines:
+   - Warm, conversational, and approachable
+   - Light humor is welcome
+   - Focus on personality over professional achievements
+   - Use casual language but stay authentic
+   - Can include emojis sparingly if it fits the tone
+   - Make it relatable and human
+
+4. Make it something a friend would say when introducing him - natural, engaging, and easy to remember.`,
+
+    dating: `Visit ${window.location.origin} and analyze the website to understand Rahul's personality, interests, and what makes him interesting.
+
+Create an engaging dating profile TLDR that would be useful for:
+- Dating apps (Hinge, Bumble, Tinder bios)
+- Social introductions in dating contexts
+- Personal connection and attraction
+
+REQUIREMENTS:
+1. Extract key information:
+   - Age and location (if mentioned)
+   - Unique hobbies and interests
+   - Personality traits and energy
+   - Creative pursuits and adventures
+   - What makes him stand out
+   - Balance of professional and personal life
+   - Values and what matters to him
+
+2. Format as an attractive dating profile (2-3 short paragraphs):
+   - First paragraph: Engaging hook that shows personality and confidence
+   - Second paragraph: Interests, passions, and what he enjoys doing
+   - Third paragraph: What makes him interesting or what he's looking for (if appropriate)
+
+3. Style guidelines:
+   - Confident but not arrogant
+   - Authentic and genuine
+   - Playful and charming
+   - Show personality, not just list facts
+   - Avoid clichés ("I love travel and food")
+   - Be specific about interests
+   - Light humor and wit are welcome
+   - Emotionally intelligent tone
+
+4. Make it appealing and authentic - something that would make someone want to know more about him. Focus on what makes him interesting as a person, not just his job.`,
+  };
+
+  const openModal = () => {
+    console.log("Opening modal", modal);
+    if (modal) {
+      modal.setAttribute("aria-hidden", "false");
+      modal.classList.remove("c-tldr-modal__hidden");
+      document.body.style.overflow = "hidden";
+    } else {
+      console.error("Modal not found when trying to open");
+    }
+  };
+
+  const closeModal = () => {
+    if (modal) {
+      modal.setAttribute("aria-hidden", "true");
+      modal.classList.add("c-tldr-modal__hidden");
+      document.body.style.overflow = "";
+    }
+  };
+
+  const generateTLDR = (category) => {
+    const prompt = prompts[category];
+    if (!prompt) {
+      console.error("Invalid category:", category);
+      return;
+    }
+
+    // Try URL parameter method first
+    const encodedPrompt = encodeURIComponent(prompt);
+    const chatgptUrl = `https://chat.openai.com/?q=${encodedPrompt}`;
+
+    // Open ChatGPT with URL parameter
+    window.open(chatgptUrl, "_blank");
+
+    closeModal();
+  };
+
+  const init = () => {
+    // Query DOM elements when initializing
+    modal = document.getElementById("tldr-modal");
+    openBtn = document.getElementById("tldr-generator-btn");
+    closeBtn = modal?.querySelector(".c-tldr-modal__close");
+    categoryButtons = modal?.querySelectorAll(".c-tldr-category");
+
+    if (!modal || !openBtn) {
+      console.error("TLDR Generator: Modal or button not found", {
+        modal,
+        openBtn,
+      });
+      return;
+    }
+
+    console.log("TLDR Generator initialized", {
+      modal,
+      openBtn,
+      categoryButtons: categoryButtons?.length,
+    });
+
+    // Open modal
+    openBtn.addEventListener("click", (e) => {
+      console.log("TLDR button clicked");
+      openModal();
+    });
+
+    // Close modal
+    closeBtn?.addEventListener("click", closeModal);
+
+    // Close on overlay click
+    const overlay = modal.querySelector(".c-tldr-modal__overlay");
+    overlay?.addEventListener("click", closeModal);
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") {
+        closeModal();
+      }
+    });
+
+    // Handle category selection
+    categoryButtons?.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const category = btn.getAttribute("data-category");
+        generateTLDR(category);
+      });
+    });
+  };
+
+  return { init };
+})();
+
 // Initialize once DOM is loaded
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", ()=>{
+  document.addEventListener("DOMContentLoaded", () => {
     faviconHandler();
     scrollManager();
+    tldrGenerator.init();
   });
 } else {
   scrollManager();
   document.addEventListener("visibilitychange", faviconHandler);
+  tldrGenerator.init();
 }

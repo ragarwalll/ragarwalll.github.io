@@ -246,12 +246,7 @@
 
       <!-- logo section -->
       <input type="checkbox" id="logo-checkbox" name="logo-checkbox" />
-      <label
-        for="logo-checkbox"
-        class="c-test"
-        style="text-decoration: underline; text-decoration-style: dotted"
-        >Hide</label
-      >
+      <label for="logo-checkbox" class="c-test">Hide</label>
       <div class="c-auto-grid">
         <object
           type="image/svg+xml"
@@ -677,6 +672,63 @@
       >
     </include-footer>
     <!-- end of footer section -->
+
+    <!-- TLDR Generator Button -->
+    <button
+      id="tldr-generator-btn"
+      class="c-tldr-btn"
+      aria-label="Generate TLDR"
+    >
+      Generate TL;DR
+    </button>
+
+    <!-- TLDR Modal -->
+    <div
+      id="tldr-modal"
+      class="c-tldr-modal c-tldr-modal__hidden"
+      role="dialog"
+      aria-labelledby="tldr-modal-title"
+      aria-hidden="true"
+    >
+      <div class="c-tldr-modal__overlay">
+        <div class="sr-only">Choose a style for your summary</div>
+      </div>
+      <div class="c-tldr-modal__content">
+        <h2 id="tldr-modal-title" class="c-tldr-modal__title">
+          Generate TL;DR
+        </h2>
+        <p class="c-tldr-modal__subtitle">Choose a style for your summary</p>
+        <div class="c-tldr-modal__categories">
+          <button
+            class="c-tldr-category u-link-clean"
+            data-category="professional"
+          >
+            <span class="c-tldr-category__title">Professional</span>
+            <span class="c-tldr-category__desc"
+              >LinkedIn bios, job applications, networking events</span
+            >
+          </button>
+          <button class="c-tldr-category u-link-clean" data-category="friendly">
+            <span class="c-tldr-category__title">Friendly</span>
+            <span class="c-tldr-category__desc"
+              >Social media bios, friend introductions, casual meetups</span
+            >
+          </button>
+          <button class="c-tldr-category u-link-clean" data-category="dating">
+            <span class="c-tldr-category__title">Dating</span>
+            <span class="c-tldr-category__desc"
+              >Dating app bios, personal connections</span
+            >
+          </button>
+        </div>
+        <button
+          class="c-tldr-modal__close u-link-clean"
+          aria-label="Close modal"
+        >
+          close
+        </button>
+      </div>
+    </div>
 
     <!-- linking script sections -->
     <script type="text/javascript" src="./script.js" defer></script>

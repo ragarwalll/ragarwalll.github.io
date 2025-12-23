@@ -256,6 +256,8 @@ a {
   font-size: 0;
   text-align: right;
   margin-bottom: var(--space-md);
+  text-decoration: underline;
+  text-decoration-style: dotted;
 }
 
 /* Show "Show all" when unchecked (default - only 3 visible) */
@@ -300,4 +302,166 @@ a {
 #logo-checkbox:checked ~ .c-auto-grid object:nth-of-type(7),
 #logo-checkbox:checked ~ .c-auto-grid object:nth-of-type(8) {
   display: revert;
+}
+
+/*────────────────────────────────────────────────────────────────────────────
+  TLDR GENERATOR COMPONENTS
+────────────────────────────────────────────────────────────────────────────*/
+
+/* Floating TLDR Button */
+.c-tldr-btn {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-sans);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+  z-index: 1000;
+  color: var(--color-bg);
+  background: var(--color-text);
+  padding: 2px;
+}
+
+.c-tldr-btn:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 48em) {
+  .c-tldr-btn {
+    bottom: var(--space-md);
+    right: var(--space-md);
+    font-size: 0.9rem;
+  }
+}
+
+/* TLDR Modal */
+.c-tldr-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--transition-fast);
+  display: flex;
+  opacity: 1;
+}
+
+.c-tldr-modal__hidden {
+  opacity: 0;
+  display: none;
+}
+
+.c-tldr-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-bg);
+  opacity: 0.9;
+}
+
+.c-tldr-modal__content {
+  position: relative;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: var(--space-xl);
+  max-width: 50rem;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.c-tldr-modal__close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-sans);
+  color: var(--color-text);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.c-tldr-modal__close:hover {
+  opacity: 0.7;
+}
+
+.c-tldr-modal__title {
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+}
+
+.c-tldr-modal__subtitle {
+  margin-top: 0;
+  margin-bottom: var(--space-lg);
+  font-size: var(--font-size-base);
+  font-style: italic;
+}
+
+.c-tldr-modal__categories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+@media (min-width: 48em) {
+  .c-tldr-modal__categories {
+    flex-direction: row;
+    gap: var(--space-lg);
+  }
+}
+
+/* Category Buttons */
+.c-tldr-category {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  font-family: var(--font-family-sans);
+  transition: opacity var(--transition-fast);
+}
+
+.c-tldr-category:hover {
+  opacity: 0.7;
+}
+
+.c-tldr-category__title {
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  margin: 0;
+  text-decoration: underline;
+}
+
+.c-tldr-category__desc {
+  font-size: var(--font-size-base);
+  font-style: italic;
+  margin: 0;
+  line-height: var(--line-height-base);
+  opacity: 0.8;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
