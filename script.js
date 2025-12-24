@@ -285,6 +285,7 @@ REQUIREMENTS:
       modal.setAttribute("aria-hidden", "true");
       modal.classList.add("c-tldr-modal__hidden");
       document.body.style.overflow = "";
+      removeTLDRQueryParam();
     }
   };
 
@@ -328,7 +329,7 @@ REQUIREMENTS:
 
     // Open modal
     openBtn.addEventListener("click", (e) => {
-      console.log("TLDR button clicked");
+      setTLDRQueryParam();
       openModal();
     });
 
@@ -355,18 +356,49 @@ REQUIREMENTS:
     });
   };
 
-  return { init };
+  return { init, openModal };
 })();
 
-// Initialize once DOM is loaded
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", () => {
-    faviconHandler();
-    scrollManager();
-    tldrGenerator.init();
-  });
-} else {
+/**
+ * Checks if the URL contains ?show-tldr
+ * @returns {boolean}
+ */
+const shouldShowTLDR = () => {
+  const params = new URLSearchParams(window.location.search);
+  return params.has("show-tldr");
+};
+
+const setTLDRQueryParam = () => {
+  const url = new URL(window.location.href);
+  url.searchParams.set("show-tldr", "true");
+  history.pushState(null, "", url.toString());
+};
+
+const removeTLDRQueryParam = () => {
+  const url = new URL(window.location.href);
+  url.searchParams.delete("show-tldr");
+  history.replaceState(null, "", url.toString());
+};
+
+const onReady = () => {
+  faviconHandler();
   scrollManager();
-  document.addEventListener("visibilitychange", faviconHandler);
   tldrGenerator.init();
+
+  if (shouldShowTLDR()) {
+    requestAnimationFrame(() => {
+      tldrGenerator.openModal();
+
+      // Clean URL without reload
+      const url = new URL(window.location.href);
+      url.searchParams.delete("show-tldr");
+      history.replaceState(null, "", url.toString());
+    });
+  }
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", onReady);
+} else {
+  onReady();
 }
